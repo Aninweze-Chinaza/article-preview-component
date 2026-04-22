@@ -108,7 +108,7 @@ For my future projects, I want to focus on deepening my knowledge of Vanilla Jav
 
 - [MDN](https://developer.mozilla.org) - Helped me understand Flexbox and CSS properties more clearly
 
-- [](https://css-tricks.com/snippets/css/a-guide-to-flebox/) - A very helpful visual guide for Flexbox
+- [Css Trick](https://css-tricks.com/snippets/css/a-guide-to-flebox/) - A very helpful visual guide for Flexbox
 
 
 ### AI Collaboration
