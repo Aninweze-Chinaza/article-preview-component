@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 1rem;
+    padding: calc(1rem + 1vw);
     background-color: hsl(210, 46%, 95%);
     font-family: 'Manrope', sans-serif;
 }
@@ -20,7 +20,7 @@ main{
 }
 article{
     background-color: white;
-    max-width: 350px;
+    max-width: 21.875em;
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
@@ -28,11 +28,11 @@ article{
     
 }
 .text-container{
-    padding: 20px;
+    padding: calc(1rem + 0.25rem);
     margin: 0;
 }
 .img-container{
-    height: 200px;
+    height: 12.5rem;
 }
 .img-container img{
     width: 100%;
@@ -42,7 +42,7 @@ article{
 }
 
 h1{
-    margin-bottom: 0.8rem;
+    margin-block-end: 0.8rem;
     font-size: 1.3rem;
     line-height: 1.2;
     letter-spacing: 0.5px;
@@ -51,49 +51,49 @@ h1{
 }
 
 .avatar{
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
 }
 .author-name{
     font-weight: 700;
     color:hsl(217, 19%, 35%);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 .date{
     font-weight: 500;
     color:hsl(212, 23%, 69%);
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 .first-paragraph{
     color:hsl(212, 23%, 69%);
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 1.6;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
 }
 .bottom-row{
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding-block-start: 2rem;
     position: relative;
 }
 .author-structure{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem;
 }
 .text-box{
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-#share-button{
+.share-button{
     background-color: hsl(210, 46%, 95%);
     color: hsl(214, 17%, 51%);
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,58 +102,53 @@ h1{
     
 }
 
-#share-button img{
+.share-button img{
     display: block;
 }
-#share-button:hover{
+.share-button:hover{
     background-color: hsl(214, 17%, 51%);
 }
 
-#share-button:hover img{
+.share-button:hover img{
     filter: brightness(0) invert(1);
 }
 .share-popup{
     position: absolute;
-    bottom: 120%;
-    right: 50%;
+    inset-block-end: 120%;
+    inset-inline-end: 50%;
     background-color: hsl(217, 19%, 35%);
     color: white;
-    padding: 12px 18px;
-    border-radius: 12px;
+    padding: 0.75rem 1.125rem;
+    border-radius: 0.75em;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375em;
     transform: translateX(50%);
     opacity: 0;
     pointer-events: none;
     transition:  0.3s ;
 }
 .share-popup span{
-    font-size: 12px;
-    letter-spacing: 4px;
+    font-size: 0.75em;
+    letter-spacing: 0.25em;
     color: hsl(212, 23%, 69%);
 }
-.share-popup::after{
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    right: 20px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid hsl(217, 19%, 35%);
-}
+
 
 .share-popup.active{
     opacity: 1;
     pointer-events: auto;
     
 }
-@media (min-width: 768px){
+@media (prefers-reduced-motion: reduce) {
+    .share-popup{
+        transition: none;
+    }
+}
+@media (min-width: 48em){
     article{
         display: flex;
-        max-width: 800px;
+        max-width: 50em;
     }
     h1{
         font-size: 1.5rem;
@@ -166,10 +161,21 @@ h1{
 
     .text-container{
         width: 60%;
-        padding: 30px;
+        padding-inline: 1.875em;
     }
 
     .img-container img{
         height: 100%;
     }
+    .share-popup::after{
+    content: "";
+    position: absolute;
+    inset-block-end: -0.5rem;
+    inset-inline-end: 1.25em;
+    width: 0;
+    height: 0;
+    border-inline-start: 0.5em solid transparent;
+    border-inline-end: 0.5em solid transparent;
+    border-block-start: 0.5em solid hsl(217, 19%, 35%);
+}
 }
